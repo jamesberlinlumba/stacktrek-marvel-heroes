@@ -1,0 +1,18 @@
+<style>
+    .hero-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-details h2,
+    .hero-details span {
+        font-weight: bold;
+    }
+</style>
+
+<div class="hero-details">
+    <h2>Hero Details</h2>
+    <p><span>Hero name: </span><input type="text" name="name" [(ngModel)]=hero.name></p>
+    <p><span>Id: </span>{{ hero.id }} | <span>Name: </span>{{ hero.name }}</p>
+</div>
