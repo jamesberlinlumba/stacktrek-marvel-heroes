@@ -9,10 +9,62 @@
     .hero-details span {
         font-weight: bold;
     }
+
+    .hero-details p {
+        margin-bottom: 100px;
+    }
+
+    .hero-details ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .heroes {
+        width: 10%;
+        padding: 0;
+    }
+
+    .heroes button {
+        display: flex;
+        width: 100%;
+        margin: 5px 0;
+        padding: 0;
+        text-align: left;
+        font-weight: normal !important;
+    }
+
+    .badge {
+        color: white;
+        background-color: #005249;
+        height: 100%;
+    }
+
+    .badge, .name {
+        padding: 6px;
+    }
 </style>
 
 <div class="hero-details">
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes">
+            <button type="button" (click)="onSelect(hero)">
+                <span class="badge">{{hero.id}}</span>
+                <span class="name">{{hero.name}}</span>
+            </button>
+        </li>
+    </ul>
+
     <h2>Hero Details</h2>
-    <p><span>Hero name: </span><input type="text" name="name" [(ngModel)]=hero.name></p>
-    <p><span>Id: </span>{{ hero.id }} | <span>Name: </span>{{ hero.name }}</p>
+    <p><span>
+        Id: 
+    </span>{{ selectedHero.id }}<span>
+        Hero Name: 
+    </span><input type="text" name="name" [(ngModel)]="selectedHero.name"></p>
+
+    <app-item-creator (newItemEvent)="addItem($event)"></app-item-creator>
+
+    <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+    </ul>
 </div>
