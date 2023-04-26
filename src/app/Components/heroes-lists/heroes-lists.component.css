@@ -1,0 +1,42 @@
+.hero-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-details h2,
+.hero-details p span {
+    font-weight: bold;
+}
+
+.hero-details p {
+    margin-bottom: 100px;
+}
+
+.hero-details ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.heroes {
+    width: 10%;
+    padding: 0;
+}
+
+.heroes button {
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.badge {
+    color: white;
+    background-color: #000D98BA;
+    height: 100%;
+}
+
+.badge, .name {
+    padding: 6px;
+}
